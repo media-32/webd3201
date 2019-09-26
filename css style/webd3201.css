@@ -1,0 +1,9 @@
+body{font-family:arial; background-color:white; color:midnightblue;}
+
+
+.toppagedesign{
+color: #8a0303;
+    background-image: url("../images/houses_background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+}
