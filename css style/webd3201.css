@@ -1,9 +1,79 @@
 body{font-family:arial; background-color:white; color:midnightblue;}
 
+.mainPageTableDesign{
+    font-size: 50px;
+    color: black;
+}
 
-.toppagedesign{
-color: #8a0303;
-    background-image: url("../images/houses_background.jpg");
+.middleBorder{
+    border-style: solid;
+    border: #4CAF50;
+}
+
+.backGroundDesign{
+color:gr;
+    background-image: url("../images/blurred_background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%
+}
+
+.topDesign{
+    background-color:white;
+}
+
+.registerLogin{
+    height: 90px;
+    width:300px;
+    font-size: 35px;
+    color: black;
+}
+
+.searchBar{
+    height: 90px;
+    width:300px;
+    font-size: 40px;
+}
+
+/*This is for the navigation bar*/
+.menu{background-color: #4CAF50;}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: indigo;
+    padding: 16px;
+    font-size: 30px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: darkred;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: gold;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: navy;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #108ec0;
 }

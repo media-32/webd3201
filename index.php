@@ -13,22 +13,43 @@ Description: This will be the main page that will the main page
     <?php
 
     /*This is to include the php files header and footer as well as pass a title variable*/
-    $_SESSION['title'] = $title = "Main Page";
+    $_SESSION['title'] = $title = "Vision Real Estate";
     require "header.php";
     include "footer.php";
+    include "constants.php";
+    include "functions.php";
     ?>
     <link href="./css style/webd3201.css" rel="stylesheet" type="text/css">
 </header>
 
 <body>
 
-    <!--This is to for the main design of the website -->
-    <table>
+    <table width="100%" class="mainPageTableDesign">
         <tr>
-            <td height="200" ; width="100%" ; class="toppagedesign" ;>
-                <h1 align="center">Welcome to Vision Realestate</h1>
-            <td>
-        </tr>
+            <td width="50%" align="center">
+                <br>
+                <br>
+                <br>
+                <br>
+                Welcome to Vision Real Estate
+                <br>
+                <br>
+                "we'll make your vision a reality"
+            </td>
+            <td width="50%" align="center" class="middleBorder">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Please Enter a provinces name
+                <br>
+                <form>
+                    <input class="searchBar" type=text name=search value="">
+                </form>
+                /*Still working on it*/
+            </td>
+        <tr>
     </table>
 
 </body>
