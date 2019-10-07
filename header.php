@@ -14,6 +14,26 @@
 </head>
 
 <body class="backGroundDesign">
+    <?php
+    /*This is for the users entering */
+    $loginsuccess = $_SESSION['loginsuccess'];
+    $userTypeHeader = $_SESSION['userType'];
+    $userIDHeader = $_SESSION['userID'];
+    $_SESSION['emailID'] = $userEmailHeader;
+    $_SESSION['userPasword'] = $userPasswordHeader;
+    $LOGIN_COOKIE = $_POST['LOGIN_COOKIE'];
+
+
+    /*This is for the cookies */
+    $value = 'userID';
+    $LOGIN_COOKIE = setcookie("TestCookie", $value, time() + 60 * 60 * 24 * 30);
+
+    $value = 'emailID';
+    $LOGIN_COOKIE = setcookie("TestCookie", $value, time() + 60 * 60 * 24 * 30);
+
+    $value = 'userPassword';
+    $LOGIN_COOKIE = setcookie("TestCookie", $value, time() + 60 * 60 * 24 * 30);
+    ?>
 
     <div>
         <!--This is to for the main design of the website -->
@@ -21,22 +41,37 @@
             <tr>
 
                 <td width="70%">
-                    <img src="./images/Vision logo.jpg">
+                    <img src="./images/Vision Logo.jpg">
                 </td>
-                
+
                 <td width=25%>
                     <img src="./images/durham college logo.jpg">
                 </td>
-                
-                <td>
-                    <div class="dropdown">
-                        <button class="dropbtn"><img src="./images/login logo.jpg"></button>
-                        <div class="dropdown-content">
-                            <a href="./login.php">login</a>
-                            <a href="./register.php">Register</a>
-                        </div>
-                    </div>
 
+                <td>
+
+                    <?php
+                    if ($loginsuccess == false) {
+                        ?>
+                        <div class="dropdown">
+                            <button class="dropbtn"><img src="./images/login logo.jpg"></button>
+                            <div class="dropdown-content">
+                                <a href="./login.php">login</a>
+                                <a href="./register.php">Register</a>
+                            </div>
+                        </div>
+                    <?php
+                    } elseif ($loginsuccess == true) {
+                        ?>
+                        <div class="dropdown">
+                            <button class="dropbtn"><img src="./images/login logo.jpg"></button>
+                            <div class="dropdown-content">
+                                <a href="./logout.php">logout</a>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </td>
             </tr>
         </table>

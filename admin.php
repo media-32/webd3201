@@ -1,9 +1,8 @@
-<?php
+<?
 /*
-File name:welcome.php
-Names: Aaron Styve
-group name:Group 2
-Description: This will be the page that everyone has access to
+File name:admin.php
+group name:group02.php
+Description: This will be the page that admins only have access to
 */
 ?>
 
@@ -18,15 +17,12 @@ Description: This will be the page that everyone has access to
     include "footer.php";
     include "constants.php";
     include "functions.php";
+    include "db.php";
     ?>
     <link href="./css style/webd3201.css" rel="stylesheet" type="text/css">
 </header>
 
 <body>
-<p>
-Welcome to Vision Real Estate, we'll make your vision a reality. This website was created and designed by group02 from durham college as a deliverable the idea of this was to make it look like a real website. We hope you enjoy the website.
-
-</p>
+    <?php ?>
+<p>Sorry did not know what to put on this page yet<p>
 </body>
-
-</html>

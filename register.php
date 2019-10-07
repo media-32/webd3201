@@ -1,9 +1,8 @@
 <?php
 /*
-File name:welcome.php
-Names: Aaron Styve
+File name:register.php
 group name:Group 2
-Description: This will be the main page that will the main page
+Description: This page is for user who are registering
 */
 ?>
 
@@ -18,6 +17,7 @@ Description: This will be the main page that will the main page
     include "footer.php";
     include "constants.php";
     include "functions.php";
+    include "db.php";
     ?>
     <link href="./css style/webd3201.css" rel="stylesheet" type="text/css">
 </header>
@@ -32,13 +32,13 @@ Description: This will be the main page that will the main page
     <br>
 
     <?php
-    $_SESSION['userType']=$userType;
-    $_SESSION['userID'] = $userID;
-    $_SESSION['emailID'] = $userEmail;
-    $_SESSION['userPasword'] = $userPassword;
+    $userTypeRegister = $_SESSION['userType'];
+    $userIDRegister = $_SESSION['userID'];
+    $_SESSION['emailID'] = $userEmailRegister;
+    $_SESSION['userPasword'] = $userPasswordRegister;
     $confirmPassword = $_POST['confirmPassword'];
-    $radioButton = $_SESSION['radiobtn'];
     $submit = $_POST['submit'];
+    $loginsuccess['loginsuccess'];
     ?>
     <div align="center">
         <form method="POST" action="<?php echo htmlspecialchars($_SREVER["PHP_SELF"]); ?>">
@@ -58,43 +58,50 @@ Description: This will be the main page that will the main page
             <p>Please enter your password<input type="password" name="userPassword" value=""></p>
 
             <p>Please renter your password<input type="password" name="confirmPassword" value=""></p>
-
-            <p>would you like to save your information?
-                <br>
-                Yes<input type="radio" name=radiobtn value="yes">
-                <br>
-                No<input type="radio" name=radiobtn value="no" checked>
-
-            </p>
+<br>
 
             <input type="submit" value="Create account" name="submit">
         </form>
 
         <?php
+        $string_arg = $userPassword;
+
+        md5($string_arg);
+
+        $sql;
+        $sql = "SELECT user_id FROM users WHERE user_id=='$userID';";
+        $registerResult = result($sql);
         $userCreate = true;
 
         if (isset($_POST['submit'])) {
-            trim($userID);
-            trim($userEmail);
+            trim($userIDRegister);
+            trim($userEmailRegister);
 
-            if ($userPassword == $confirmPassword) {
+            if ($registerResult== true) {
+                echo "This username is already in use please use a different one";
+                $userCreate = false;
+            }
+
+
+            if ($userPasswordRegister == $confirmPassword) {
                 $userCreate = true;
-            } elseif ($userPassword != $confirmPassword) { 
-                $userCreate=false;
+            } elseif ($userPasswordRegister != $confirmPassword) {
+                $userCreate = false;
                 echo "Passwords do not match please retry";
             }
-if ($userType=="none"){
-    echo "Please choose either Agent or Client";
-    $userCreate=false;
-}
+            if ($userTypeRegister == "none") {
+                echo "Please choose either Agent or Client";
+                $userCreate = false;
+            }
 
-if($userCreate==true){
-    $date=date(o,j,n);
-    $sql=$_SESSION['sql'];
-    $sql="INSERT INTO users(user_id,password,usertype,email_address,enrol_date,last_Access) VALUES ('$userID','$userPassword','$userEmail','$date','$date');";
 
-}
-        
+            if ($userCreate == true) {
+                $date = date(o, j, n);
+                $sql = "INSERT INTO users(user_id,password,usertype,email_address,enrol_date,last_Access) VALUES ('$userIDRegister','$string_arg','$userEmailRegister','$date','$date');";
+                update_database($sql);
+                header("Location:./welcome.php");
+                $loginsuccess=true;
+            }
         }
         ?>
 </body>

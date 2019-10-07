@@ -1,9 +1,8 @@
 <?
 /*
 File name:logout.php
-Names:Aaron Styve
 group name:grorup 2
-Description: This will be the main page that will the main page
+Description: This will allow the users to log out by clearing cookies and sessions
 */
 ?>
 
@@ -12,7 +11,7 @@ Description: This will be the main page that will the main page
 
 <body>
 <?php
-$_SESSION['loginSuccess']=false;
+session_abort()
 
 ?>
 
