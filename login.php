@@ -28,6 +28,7 @@ Description: This will be the main page that will the main page
     $userIDlogin = $_SESSION['userID'];
     $userPasswordLogin = $_SESSION['userPassword'];
     $loginsuccess=$_SESSION['loginsuccess'];
+    $loginbtn=$_POST['loginbtn']
     ?>
     <br>
     <br>
@@ -38,6 +39,7 @@ Description: This will be the main page that will the main page
         <form method="POST" action="<?php echo htmlspecialchars($_SREVER["PHP_SELF"]); ?>">
             <p>Please enter your username or email<input type=text name=userID value=""></p>
             <p>Please enter your password<input type=password name=userPassword value=""></p>
+            <input type=submit name=loginbtn value=login>
         </form>
     </div>
     <?
