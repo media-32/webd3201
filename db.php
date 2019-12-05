@@ -7,10 +7,12 @@ Description: This will be for the access to the database
 */
 
 
+
+
 function db_connect()
 {
     $connection = pg_connect("host=127.0.0.1 dbname=group02_db
-    user=styvea password=100714115");
+    user=styvea password=password");
     return $connection;
 }
 

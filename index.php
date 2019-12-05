@@ -1,8 +1,8 @@
 <?
 /*
 File name:index.php
-Names:
-group name:
+Names: Aaron Styve, Hamza
+group name: Group_02
 Description: This will be the main page that will the main page
 */
 ?>
@@ -42,12 +42,13 @@ Description: This will be the main page that will the main page
                 <br>
                 <br>
                 <br>
-                Please Enter a provinces name
+                Please Enter a city name within the durham region
                 <br>
                 <form>
                     <input class="searchBar" type=text name=search value="">
+                    
                 </form>
-                /*Still working on it*/
+                
             </td>
         <tr>
     </table>

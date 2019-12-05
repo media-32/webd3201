@@ -1,8 +1,8 @@
-<?
+<?php
 /*
-File name:admin.php
-group name:group02.php
-Description: This will be the page that admins only have access to
+file name:aup.php
+name: group_02
+description: this is to say that the user has been disabled due to a error
 */
 ?>
 
@@ -14,15 +14,15 @@ Description: This will be the page that admins only have access to
     /*This is to include the php files header and footer as well as pass a title variable*/
     $_SESSION['title'] = $title = "Vision Real Estate";
     require "header.php";
-    include_once "footer.php";
-    include_once "constants.php";
-    include_once "functions.php";
-    include_once "db.php";
+    include "footer.php";
+    include "constants.php";
+    include "functions.php";
     ?>
     <link href="./css style/webd3201.css" rel="stylesheet" type="text/css">
 </header>
 
 <body>
-    <?php ?>
-<p>Sorry did not know what to put on this page yet<p>
+
 </body>
+
+</html>

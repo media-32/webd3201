@@ -10,4 +10,10 @@ define('AGENT',"a");
 define('CLIENT',"c");
 define('PENDING',"p");
 define('DISABLED',"d");
+
+define('OPEN',"OPEN");
+define('CLOSED',"CLOSED");
+define('SOLD',"SOLD");
+define('HIDDEN',"HIDDEN");
+define('MAX_RESULTS',200);
 ?>

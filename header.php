@@ -16,14 +16,37 @@
 <body class="backGroundDesign">
     <?php
     /*This is for the users entering */
-    $loginsuccess = $_SESSION['loginsuccess'];
-    $userTypeHeader = $_SESSION['userType'];
-    $userIDHeader = $_SESSION['userID'];
-    $_SESSION['emailID'] = $userEmailHeader;
-    $_SESSION['userPasword'] = $userPasswordHeader;
+    
+    if (isset ($_SESSION['loginsuccess'])) {
+        $loginsuccess = $_SESSION['loginsuccess'];
+    } else {
+        $loginsuccess = false;
+    };
+    if (isset ($_SESSION['userType'])) {
+        $userTypeHeader = $_SESSION['userType'];
+    } else {
+        $userTypeHeader = '';
+    };
+    if (isset ($_SESSION['userID'])) {
+        $userIDHeader = $_SESSION['userID'];
+    } else {
+        $userIDHeader = 0;
+    }
+
+    if (isset ($_SESSION['emailID'])) {
+        $_SESSION['emailID'] = $userEmailHeader;
+    } else {
+        $userEmailHeader = '';
+    }
+    if (isset ($_SESSION['userPasword'])) {
+        $_SESSION['userPasword'] = $userPasswordHeader;
+    } else {
+        $userPasswordHeader = '';
+    }
+    if(isset($_POST['LOGIN_COOKIE'])){
     $LOGIN_COOKIE = $_POST['LOGIN_COOKIE'];
-
-
+    }
+    else{
     /*This is for the cookies */
     $value = 'userID';
     $LOGIN_COOKIE = setcookie("TestCookie", $value, time() + 60 * 60 * 24 * 30);
@@ -33,6 +56,8 @@
 
     $value = 'userPassword';
     $LOGIN_COOKIE = setcookie("TestCookie", $value, time() + 60 * 60 * 24 * 30);
+    
+    }
     ?>
 
     <div>
@@ -92,6 +117,15 @@
                 <a href="./welcome.php">Welcome Page</a>
             </div>
         </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Search</button>
+            <div class="dropdown-content">
+                <a href="./listing-city-select.php">search by city</a>
+                <a href="./listing-search.php">search by detail</a>
+            </div>
+        </div>
+
 
     </div>
 </body>

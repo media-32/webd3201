@@ -54,7 +54,7 @@ Description: This page is for user who are registering
 
     ?>
     <div align="center">
-        <form method="POST" action="<?php echo htmlspecialchars($_SREVER["PHP_SELF"]); ?>">
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
             <br>
             <select name="userType">
@@ -73,7 +73,7 @@ Description: This page is for user who are registering
             <p>Please enter your password<input type="password" name="userPassword" value=""></p>
 
             <p>Please renter your password<input type="password" name="confirmPassword" value=""></p>
-            <p>please the city you live in<input type="password" name="city" value=""></p>
+            <p>please the city you live in<input type="text" name="city" value=""></p>
             <select name="province">
                 <option value="none">Please choose a option...</option>
                 <option value="ON">Ontario</option>

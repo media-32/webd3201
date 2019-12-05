@@ -10,8 +10,11 @@
         echo "&copy;2019";
     }
 ?>
+<div style="position:absolute; bottom:0;">
+<a href="./privacy_policy.php">privacy policy</a>
+</div> 
 
-<div style="position:absolute; right:0; bottom:0;">
+<div style="position:fixed; left:92%; bottom:0;">
 
 <?php
 require "functions.php";
